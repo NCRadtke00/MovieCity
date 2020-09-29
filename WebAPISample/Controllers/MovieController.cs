@@ -33,6 +33,14 @@ namespace WebAPISample.Controllers
             var movie = _context.Movies.Where(m => m.MovieId == id);
             return Ok(movie);
         }
+        // POST api/movie
+        [HttpPost]
+        public IActionResult Post([FromBody] Movie value)
+        {
+            _context.Movies.Add(value);
+            _context.SaveChanges();
+            return Ok(value);
+        }
 
     }
 }
