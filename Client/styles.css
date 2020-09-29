@@ -9,7 +9,7 @@ html {
 .clear {
   clear: both;
 }
-h1 {
+.logo {
   font-size: 15rem;
 }
 nav {
@@ -27,13 +27,13 @@ nav li {
   margin: 0rem 4rem;
 }
 .form-section {
-  background-image: url("pexels-burst-373893.jpg");
-  height: 80%;
+  background-image: url("cinema-4609877_1920.jpg");
+  height: 60%;
   background-position: center;
   background-size: cover;
   text-align: center;
   color: white;
-  padding-top: 15rem;
+  padding-top: 10rem;
   text-shadow: 3px 3px 3px black;
 }
 form,
@@ -46,14 +46,14 @@ form textarea {
 form input,
 form textarea {
   margin: 2rem auto;
-  width: 50%;
+  width: 40%;
 }
 form button {
-  margin-bottom: 10rem;
-  padding: 2rem 4rem;
+  margin-bottom: 5rem;
+  padding: 2rem 2rem;
   background: rgb(61, 81, 102);
   border: none;
   color: white;
   cursor: pointer;
-  width: 50%;
+  width: 40%;
 }

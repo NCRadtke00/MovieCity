@@ -19,25 +19,30 @@
       <nav>
         <h1 id="logo">Movie City</h1>
         <ul>
-          <li><a href="#h">Home</a></li>
-          <li><a href="#S">Search</a></li>
-          <li><a href="#A">Add</a></li>
-          <li><a href="#E">Edit</a></li>
-          <li><a href="#D">Delete</a></li>
-          <li><a href="#V">DisplayAll</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#Search">Search</a></li>
+          <li><a href="#Add">Add</a></li>
+          <li><a href="#Edit">Edit</a></li>
+          <li><a href="#Delete">Delete</a></li>
+          <li><a href="#DisplayAll">DisplayAll</a></li>
         </ul>
       </nav>
     </header>
     <div id="response">
       <pre></pre>
     </div>
-
-    <form id="my-form">
-      <input type="text" name="title" placeholder="Title" />
-      <input type="text" name="director" placeholder="Director" />
-      <input type="text" name="genre" placeholder="Genre" />
-      <input type="text" name="synopsis" placeholder="Synopsis" />
-      <input type="number" name="runTime" placeholder="RunTime" />
+    <section class="form-Section" id="c"></section>
+    <form>
+      <label for="Title-input">Title:</label>
+      <input type="text" name="title" id="Title-input" />
+      <label for="Director-input">Director:</label>
+      <input type="text" name="Director-input" id="Director" />
+      <label for="Genre-input">Genre:</label>
+      <input type="text" name="genre" id="Genre-input" />
+      <label for="Synopsis-input">Synopsis:</label>
+      <input type="text" name="synopsis" id="Synopsis-input" />
+      <label for="RunTime-input">Run Time:</label>
+      <input type="number" name="runTime" id="RunTime-input" />
       <button>Submit</button>
     </form>
 
