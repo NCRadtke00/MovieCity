@@ -49,6 +49,14 @@ namespace WebAPISample.Controllers
             _context.SaveChanges();
             return Ok(movie);
         }
-
+        // DELETE api/movie/5
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var movie = _context.Movies.Where(m => m.MovieId == id).FirstOrDefault();
+            _context.Movies.Remove(movie);
+            _context.SaveChanges();
+            return Ok(movie);
+        }
     }
 }
