@@ -41,6 +41,14 @@ namespace WebAPISample.Controllers
             _context.SaveChanges();
             return Ok(value);
         }
+        // PUT api/movie
+        [HttpPut]
+        public IActionResult Put([FromBody] Movie movie)
+        {
+            _context.Movies.Update(movie);
+            _context.SaveChanges();
+            return Ok(movie);
+        }
 
     }
 }
