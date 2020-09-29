@@ -23,18 +23,6 @@ namespace WebAPISample.Migrations
                 {
                     table.PrimaryKey("PK_Movies", x => x.MovieId);
                 });
-
-            migrationBuilder.InsertData(
-                table: "Movies",
-                columns: new[] { "MovieId", "Director", "Genre", "ImageLocation", "RunTime", "Synopsis", "Title" },
-                values: new object[,]
-                {
-                    { 1, "Martin Scorsese", "Drama", null, 0, null, "The Departed" },
-                    { 2, "Christopher Nolan", "Drama", null, 0, null, "The Dark Knight" },
-                    { 3, "Christopher Nolan", "Drama", null, 0, null, "Inception" },
-                    { 4, "David Gordon Green", "Comedy", null, 0, null, "Pineapple Express" },
-                    { 5, "John McTiernan", "Action", null, 0, null, "Die Hard" }
-                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
