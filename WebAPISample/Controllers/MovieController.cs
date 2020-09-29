@@ -23,40 +23,10 @@ namespace WebAPISample.Controllers
         public IActionResult Get()
         {
             // Retrieve all movies from db logic
+            var moviesList = _context.Movies.ToList();
             return Ok(new string[] { "movie1 string", "movie2 string" });
         }
 
-        // GET api/movie/5
-        [HttpGet("{id}")]
-        public IActionResult Get(int id)
-        {
-            // Retrieve movie by id from db logic
-            // return Ok(movie);
-            return Ok();
-        }
 
-        // POST api/movie
-        [HttpPost]
-        public IActionResult Post([FromBody]Movie value)
-        {
-            // Create movie in db logic
-            return Ok();
-        }
-
-        // PUT api/movie
-        [HttpPut]
-        public IActionResult Put([FromBody] Movie movie)
-        {
-            // Update movie in db logic
-            return Ok();
-        }
-
-        // DELETE api/movie/5
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
-        {
-            // Delete movie from db logic
-            return Ok();
-        }
     }
 }
