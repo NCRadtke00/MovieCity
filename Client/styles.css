@@ -12,6 +12,20 @@ html {
 h1 {
   font-size: 15rem;
 }
+nav {
+  background: rgb(61, 81, 102);
+  color: white;
+}
+nav h1 {
+  float: left;
+}
+nav ul {
+  float: right;
+}
+nav li {
+  float: left;
+  margin: 0rem 4rem;
+}
 .form-section {
   background-image: url("pexels-burst-373893.jpg");
   height: 80%;
