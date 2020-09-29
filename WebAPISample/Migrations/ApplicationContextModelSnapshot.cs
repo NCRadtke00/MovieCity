@@ -34,6 +34,12 @@ namespace WebAPISample.Migrations
                     b.Property<string>("ImageLocation")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("RunTime")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Synopsis")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
@@ -47,6 +53,7 @@ namespace WebAPISample.Migrations
                             MovieId = 1,
                             Director = "Martin Scorsese",
                             Genre = "Drama",
+                            RunTime = 0,
                             Title = "The Departed"
                         },
                         new
@@ -54,6 +61,7 @@ namespace WebAPISample.Migrations
                             MovieId = 2,
                             Director = "Christopher Nolan",
                             Genre = "Drama",
+                            RunTime = 0,
                             Title = "The Dark Knight"
                         },
                         new
@@ -61,6 +69,7 @@ namespace WebAPISample.Migrations
                             MovieId = 3,
                             Director = "Christopher Nolan",
                             Genre = "Drama",
+                            RunTime = 0,
                             Title = "Inception"
                         },
                         new
@@ -68,6 +77,7 @@ namespace WebAPISample.Migrations
                             MovieId = 4,
                             Director = "David Gordon Green",
                             Genre = "Comedy",
+                            RunTime = 0,
                             Title = "Pineapple Express"
                         },
                         new
@@ -75,6 +85,7 @@ namespace WebAPISample.Migrations
                             MovieId = 5,
                             Director = "John McTiernan",
                             Genre = "Action",
+                            RunTime = 0,
                             Title = "Die Hard"
                         });
                 });
