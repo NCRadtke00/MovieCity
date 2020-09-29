@@ -9,8 +9,8 @@ using WebAPISample.Data;
 namespace WebAPISample.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20200929184004_SeedingMovieDB")]
-    partial class SeedingMovieDB
+    [Migration("20200929184618_Inital")]
+    partial class Inital
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
