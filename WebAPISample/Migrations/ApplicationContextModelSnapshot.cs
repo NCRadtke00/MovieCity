@@ -46,6 +46,48 @@ namespace WebAPISample.Migrations
                     b.HasKey("MovieId");
 
                     b.ToTable("Movies");
+
+                    b.HasData(
+                        new
+                        {
+                            MovieId = 1,
+                            Director = "Martin Scorsese",
+                            Genre = "Drama",
+                            RunTime = 0,
+                            Title = "The Departed"
+                        },
+                        new
+                        {
+                            MovieId = 2,
+                            Director = "Christopher Nolan",
+                            Genre = "Drama",
+                            RunTime = 0,
+                            Title = "The Dark Knight"
+                        },
+                        new
+                        {
+                            MovieId = 3,
+                            Director = "Christopher Nolan",
+                            Genre = "Drama",
+                            RunTime = 0,
+                            Title = "Inception"
+                        },
+                        new
+                        {
+                            MovieId = 4,
+                            Director = "David Gordon Green",
+                            Genre = "Comedy",
+                            RunTime = 0,
+                            Title = "Pineapple Express"
+                        },
+                        new
+                        {
+                            MovieId = 5,
+                            Director = "John McTiernan",
+                            Genre = "Action",
+                            RunTime = 0,
+                            Title = "Die Hard"
+                        });
                 });
 #pragma warning restore 612, 618
         }
