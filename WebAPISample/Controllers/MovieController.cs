@@ -24,8 +24,7 @@ namespace WebAPISample.Controllers
         {
             // Retrieve all movies from db logic
             var moviesList = _context.Movies.ToList();
-            return Ok(new string[] { "movie1 string", "movie2 string" });
-            //return Ok(new string [] {moviesList};
+            return Ok(moviesList);
         }
         // GET api/movie/5
         [HttpGet("{id}")]
