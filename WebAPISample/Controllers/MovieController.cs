@@ -26,7 +26,13 @@ namespace WebAPISample.Controllers
             var moviesList = _context.Movies.ToList();
             return Ok(new string[] { "movie1 string", "movie2 string" });
         }
-
+        // GET api/movie/5
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
+        {
+            var movie = _context.Movies.Where(m => m.MovieId == id);
+            return Ok(movie);
+        }
 
     }
 }
