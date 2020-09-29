@@ -12,15 +12,34 @@ html {
 h1 {
   font-size: 15rem;
 }
-.btn {
-  background-color: #18a4bc !important;
-  border-color: #18a4bc !important;
+.form-section {
+  background-image: url("pexels-burst-373893.jpg");
+  height: 80%;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  color: white;
+  padding-top: 15rem;
+  text-shadow: 3px 3px 3px black;
 }
-.btn1 {
+form,
+form input,
+form label,
+form textarea {
+  display: block;
+  font-size: 2.4rem;
+}
+form input,
+form textarea {
+  margin: 2rem auto;
+  width: 50%;
+}
+form button {
   margin-bottom: 10rem;
-  padding: 10px;
-  border: 2px;
-
+  padding: 2rem 4rem;
+  background: rgb(61, 81, 102);
+  border: none;
+  color: white;
   cursor: pointer;
   width: 50%;
 }
