@@ -68,7 +68,7 @@
       type: "GET",
       
       success: function () {
-        $('.movieData'.html(data);
+        $('.movieData'.html(data));
       }
     })
     .then(function (data) {
