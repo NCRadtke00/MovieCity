@@ -78,6 +78,8 @@
           '<tr>' + 
           '<td>' + value.title + '</td>' +
           '<td>' + value.genre + '</td>' +
+          '<td>' + value.runTime + '</td>' +
+          '<td>' + value.synopsis + '</td>' +
           '<td>' + value.director + '</td>' +
           '<tr>'
         );
