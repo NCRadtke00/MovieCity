@@ -6,7 +6,7 @@
       Director: this["director"].value,
       Genre: this["genre"].value,
       Synopsis: this["synopsis"].value,
-      RunTime: this["runTime"].value,
+      RunTime: this["run  time"].value,
       ImageLocation: this["imagelocation"].value,
     };
 
@@ -35,7 +35,7 @@
       Director: this["director"].value,
       Genre: this["genre"].value,
       Synopsis: this["synopsis"].value,
-      RunTime: this["runTime"].value,
+      RunTime: this["run  time"].value,
       ImageLocation: this["imagelocation"].value,
     };
     $.ajax({
@@ -56,14 +56,12 @@
     e.preventDefault();
   }
   $("#update-Form").submit(processForm);
-  //$("#update-Form").submit(function (e){
-  //e.preventDefault();
-  //UpdateMovie();
-  //});
+
   function SearchForm(e) {
     let filteredMovies = [];
     let searchMovieOptions = document.getElementById('select-option').value;
     let textInput = document.getElementById('text-input').value;
+    let intInput = document.getElementById('int-input').value;
     switch (searchMovieOptions){
       case "title":
         filteredMovies = movies.filter(m => m.Title.includes(textInput));
@@ -77,8 +75,8 @@
         case "synopsis":
         filteredMovies = movies.filter(m => m.Synopsis.includes(textInput));
         break;
-        case "runTime":
-        filteredMovies = movies.filter(m => m.includes(textInput));
+        case "run time":
+        filteredMovies = movies.filter(m => m..includes(intInput));
         break;
         default:
           break;
@@ -98,7 +96,7 @@
     e.preventDefault();
   };
   $('#searchForm').submit(SearchForm);
-  
+
   function GetMovieList(e) {
     $(document).ready(function (){
       $.ajax({
@@ -107,22 +105,24 @@
       type: "GET",
       
       success: function () {
-        then(function (data) {
-          movies = data
-          $.each(data, function(index,value){
-            $('.movieData').append(
-              '<tr>' + 
-              '<td>' + value.title + '</td>' +
-              '<td>' + value.genre + '</td>' +
-              '<td>' + value.runTime + '</td>' +
-              '<td>' + value.synopsis + '</td>' +
-              '<td>' + value.director + '</td>' +
-              '<tr>'
-            );
-          });
-        });
+        $('.movieData'.html(data));
       }
     })
+    .then(function (data) {
+      movies = data
+      $.each(data, function(index,value){
+        $('.movieData').append(
+          '<tr>' + 
+          '<td>' + value.title + '</td>' +
+          '<td>' + value.genre + '</td>' +
+          '<td>' + value.runTime + '</td>' +
+          '<td>' + value.synopsis + '</td>' +
+          '<td>' + value.director + '</td>' +
+          '<tr>'
+        );
+      });
+    });
+   
   });
 }$(document).ready(GetMovieList());
 
