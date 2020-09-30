@@ -59,8 +59,34 @@
   //e.preventDefault();
   //UpdateMovie();
   //});
-  function GetMovieList(e) {}
   function SearchForm(e) {}
+  function GetMovieList(e) {
+    $(document).ready(function (){
+      $.ajax({
+      url: "https://localhost:44325/api/movie",
+      dataType: "json",
+      type: "GET",
+      
+      success: function () {
+        $('.movieData'.html(data);
+      }
+    })
+    .then(function (data) {
+      movies = data
+      $.each(data, function(index,value){
+        $('.movieData').append(
+          '<tr>' + 
+          '<td>' + value.title + '</td>' +
+          '<td>' + value.genre + '</td>' +
+          '<td>' + value.director + '</td>' +
+          '<tr>'
+        );
+      });
+    });
+   
+  });
+}$(document).ready(GetMovieList());
+
 })(jQuery);
 
 //$(function(){
