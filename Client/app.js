@@ -6,7 +6,7 @@
       Director: this["director"].value,
       Genre: this["genre"].value,
       Synopsis: this["synopsis"].value,
-      RunTime: this["run  time"].value,
+      RunTime: this["runTime"].value,
       ImageLocation: this["imagelocation"].value,
     };
 
@@ -35,7 +35,7 @@
       Director: this["director"].value,
       Genre: this["genre"].value,
       Synopsis: this["synopsis"].value,
-      RunTime: this["run  time"].value,
+      RunTime: this["runTime"].value,
       ImageLocation: this["imagelocation"].value,
     };
     $.ajax({
@@ -77,7 +77,7 @@
         case "synopsis":
         filteredMovies = movies.filter(m => m.Synopsis.includes(textInput));
         break;
-        case "run time":
+        case "runTime":
         filteredMovies = movies.filter(m => m.includes(textInput));
         break;
         default:
