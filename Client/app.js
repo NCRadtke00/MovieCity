@@ -1,4 +1,5 @@
 (function ($) {
+  movies = []
   function processForm(e) {
     var dict = {
       Title: this["title"].value,
@@ -59,7 +60,33 @@
   //e.preventDefault();
   //UpdateMovie();
   //});
-  function SearchForm(e) {}
+  function SearchForm(e) {
+    let filteredMovies = [];
+    let searchMovieOptions = document.getElementById('select-option').value;
+    let textInput = document.getElementById('text-input').value;
+    switch (searchMovieOptions){
+      case "title":
+        filteredMovies = movies.filter(m => m.Title.includes(textInput));
+        break;
+        case "director":
+        filteredMovies = movies.filter(m => m.Director.includes(textInput));
+        break;
+        case "genre":
+        filteredMovies = movies.filter(m => m.Genre.includes(textInput));
+        break;
+        case "synopsis":
+        filteredMovies = movies.filter(m => m.Synopsis.includes(textInput));
+        break;
+        case "run time":
+        filteredMovies = movies.filter(m => m..includes(textInput));
+        break;
+        default:
+          break;
+    }
+    $('.movieData'),html('');
+    $.each(filteredMovies)
+
+  }
   function GetMovieList(e) {
     $(document).ready(function (){
       $.ajax({
