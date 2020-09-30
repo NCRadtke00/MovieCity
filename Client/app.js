@@ -26,8 +26,12 @@
     })
     e.preventDefault();
   }
-  $("#addForm").submit(processForm);
-  
+  $("#update-Form").submit(processForm);
+  //$("#update-Form").submit(function (e){
+    //e.preventDefault();
+    //UpdateMovie();
+  //});
+
 
   function processForm(e) {
     var dict = {
