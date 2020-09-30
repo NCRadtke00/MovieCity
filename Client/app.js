@@ -1,6 +1,6 @@
 (function ($) {
   movies = []
-  function processForm(e) {
+  function processForm() {
     var dict = {
       Title: this["title"].value,
       Director: this["director"].value,
@@ -29,7 +29,7 @@
 
   $("#addForm").submit(processForm);
 
-  function UpdateMovie(e) {
+  function UpdateMovie() {
     var movie = {
       Title: this["title"].value,
       Director: this["director"].value,
@@ -57,7 +57,7 @@
   }
   $("#update-Form").submit(processForm);
 
-  function SearchForm(e) {
+  function SearchForm() {
     let filteredMovies = [];
     let searchMovieOptions = document.getElementById('select-option').value;
     let textInput = document.getElementById('text-input').value;
@@ -97,17 +97,17 @@
   };
   $('#searchForm').submit(SearchForm);
 
-  function GetMovieList(e) {
-    $(document).ready(function (){
+  function GetMovieList() {
+
       $.ajax({
       url: "https://localhost:44325/api/movie",
       dataType: "json",
       type: "GET",
-      data: JSON.stringify(e),
+      data: JSON.stringify(),
       success: function (data) {
           movies = data
           $.each(data, function(index,value){
-            $('.movieData').append(
+            $('#movieDataTable').append(
               '<tr>' + 
               '<td>' + value.title + '</td>' +
               '<td>' + value.genre + '</td>' +
@@ -119,8 +119,8 @@
           });
 
       }
-    })
-  });
+    });
+
 }$(document).ready(GetMovieList());
 
 })(jQuery);

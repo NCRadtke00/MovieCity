@@ -30,7 +30,7 @@
     </header>
     <div id="response">
       <pre></pre>
-      <div id="Movies"></div>
+      
     </div>
     <section class="form-Section" id="c"></section>
     <form>
@@ -44,9 +44,14 @@
       <input type="text" name="synopsis" id="Synopsis-input" />
       <label for="runTime-input">Run Time:</label>
       <input type="number" name="runTime" id="runTime-input" />
+      <label for="ImageLoaction-input">Image Location: </label>
+      <input type="text" name="imageLoaction" id="ImageLoaction-input"/>
       <button class="btn" onclick="processForm()">Submit</button>
     </form>
-
+    <button class="btn" onclick="GetMovieList()">Display Movie List</button>
+    <div class="movieData">
+      <table id="movieDataTable"></table>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="./app.js"></script>
 
