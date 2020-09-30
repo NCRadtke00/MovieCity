@@ -103,7 +103,7 @@
       url: "https://localhost:44325/api/movie",
       dataType: "json",
       type: "GET",
-      data: JSON.stringify(movie),
+      data: JSON.stringify(e),
       success: function (data) {
           movies = data
           $.each(data, function(index,value){
