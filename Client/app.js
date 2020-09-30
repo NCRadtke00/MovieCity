@@ -1,5 +1,5 @@
-(function ($) {
-  movies = []
+
+
   function processForm() {
     var dict = {
       Title: this["title"].value,
@@ -29,101 +29,121 @@
 
   $("#addForm").submit(processForm);
 
-  function UpdateMovie() {
-    var movie = {
-      Title: this["title"].value,
-      Director: this["director"].value,
-      Genre: this["genre"].value,
-      Synopsis: this["synopsis"].value,
-      RunTime: this["run  time"].value,
-      ImageLocation: this["imagelocation"].value,
-    };
-    $.ajax({
-      url: "https://localhost:44325/api/movie",
-      dataType: "json",
-      type: "put",
-      contentType: "application/json",
-      data: JSON.stringify(movie),
-      success: function (data, textStatus, errorThrown) {
-        $("#response pre").html(data);
-      },
-      error: function (jqXhr, textStatus, jQxhr) {
-        console.log(errorThrown);
-      },
-    }).then(function () {
-      GetMovieList();
-    });
-    e.preventDefault();
-  }
-  $("#update-Form").submit(processForm);
-
-  function SearchForm() {
-    let filteredMovies = [];
-    let searchMovieOptions = document.getElementById('select-option').value;
-    let textInput = document.getElementById('text-input').value;
-    let intInput = document.getElementById('int-input').value;
-    switch (searchMovieOptions){
-      case "title":
-        filteredMovies = movies.filter(m => m.Title.includes(textInput));
-        break;
-        case "director":
-        filteredMovies = movies.filter(m => m.Director.includes(textInput));
-        break;
-        case "genre":
-        filteredMovies = movies.filter(m => m.Genre.includes(textInput));
-        break;
-        case "synopsis":
-        filteredMovies = movies.filter(m => m.Synopsis.includes(textInput));
-        break;
-        case "run time":
-        filteredMovies = movies.filter(m => m.includes(intInput));
-        break;
-        default:
-          break;
-    }
-    $('.movieData').html('');
-    $.each(filteredMovies, function(index, value) {
-      $('.movieData').append(
-        '<tr>' + 
-        '<td>' + value.title + '</td>' +
-        '<td>' + value.genre + '</td>' +
-        '<td>' + value.runTime + '</td>' +
-        '<td>' + value.synopsis + '</td>' +
-        '<td>' + value.director + '</td>' +
-        '<tr>'
-      );
-    });
-    e.preventDefault();
+function UpdateMovie() {
+  var movie = {
+    Title: this["title"].value,
+    Director: this["director"].value,
+    Genre: this["genre"].value,
+    Synopsis: this["synopsis"].value,
+    RunTime: this["run  time"].value,
+    ImageLocation: this["imagelocation"].value,
   };
-  $('#searchForm').submit(SearchForm);
+  $.ajax({
+    url: "https://localhost:44325/api/movie",
+    dataType: "json",
+    type: "put",
+    contentType: "application/json",
+    data: JSON.stringify(movie),
+    success: function (data, textStatus, errorThrown) {
+      $("#response pre").html(data);
+    },
+    error: function (jqXhr, textStatus, jQxhr) {
+      console.log(errorThrown);
+    },
+  }).then(function () {
+    GetMovieList();
+  });
+  e.preventDefault();
+}
+$("#update-Form").submit(processForm);
 
-  function GetMovieList() {
+function SearchForm() {
+  let filteredMovies = [];
+  let searchMovieOptions = document.getElementById("select-option").value;
+  let textInput = document.getElementById("text-input").value;
+  let intInput = document.getElementById("int-input").value;
+  switch (searchMovieOptions) {
+    case "title":
+      filteredMovies = movies.filter((m) => m.Title.includes(textInput));
+      break;
+    case "director":
+      filteredMovies = movies.filter((m) => m.Director.includes(textInput));
+      break;
+    case "genre":
+      filteredMovies = movies.filter((m) => m.Genre.includes(textInput));
+      break;
+    case "synopsis":
+      filteredMovies = movies.filter((m) => m.Synopsis.includes(textInput));
+      break;
+    case "run time":
+      filteredMovies = movies.filter((m) => m.includes(intInput));
+      break;
+    default:
+      break;
+  }
+  $(".movieData").html("");
+  $.each(filteredMovies, function (index, value) {
+    $(".movieData").append(
+      "<tr>" +
+        "<td>" +
+        value.title +
+        "</td>" +
+        "<td>" +
+        value.genre +
+        "</td>" +
+        "<td>" +
+        value.runTime +
+        "</td>" +
+        "<td>" +
+        value.synopsis +
+        "</td>" +
+        "<td>" +
+        value.director +
+        "</td>" +
+        "<tr>"
+    );
+  });
+  e.preventDefault();
+}
+$("#searchForm").submit(SearchForm);
 
-      $.ajax({
-      url: "https://localhost:44325/api/movie",
-      dataType: "json",
-      type: "GET",
-      data: JSON.stringify(),
-      success: function (data) {
-          movies = data
-          $.each(data, function(index,value){
-            $('#movieDataTable').append(
-              '<tr>' + 
-              '<td>' + value.title + '</td>' +
-              '<td>' + value.genre + '</td>' +
-              '<td>' + value.runTime + '</td>' +
-              '<td>' + value.synopsis + '</td>' +
-              '<td>' + value.director + '</td>' +
-              '<tr>'
-            );
-          });
+function GetMovieList() {
+  $.ajax({
+    url: "https://localhost:44325/api/movie",
+    dataType: "json",
+    type: "GET",
+    data: JSON.stringify(),
+    success: function (data){
+        MovieSucess(data);
+    },
+  });
+}
+function MovieSucess(data) {
+  movies = data;
+  $(".movieData").html("");
+  data.forEach(value => {
+    $(".movieData").append(
+      "<tr>" +
+        "<td>" +
+        value.title +
+        "</td>" +
+        "<td>" +
+        value.genre +
+        "</td>" +
+        "<td>" +
+        value.runTime +
+        "</td>" +
+        "<td>" +
+        value.synopsis +
+        "</td>" +
+        "<td>" +
+        value.director +
+        "</td>" +
+        "<tr>"
+    );
+  });
+}
 
-      }
-    });
-
-}$(document).ready(GetMovieList());
-
-})(jQuery);
 
 //$(function(){
 //$.get("https://localhost:44325/api/movie", function(data){
