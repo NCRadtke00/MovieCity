@@ -1,6 +1,6 @@
-(function ($) {
-  movies = []
-  function processForm(e) {
+
+
+  function processForm() {
     var dict = {
       Title: this["title"].value,
       Director: this["director"].value,
@@ -29,101 +29,121 @@
 
   $("#addForm").submit(processForm);
 
-  function UpdateMovie(e) {
-    var movie = {
-      Title: this["title"].value,
-      Director: this["director"].value,
-      Genre: this["genre"].value,
-      Synopsis: this["synopsis"].value,
-      RunTime: this["run  time"].value,
-      ImageLocation: this["imagelocation"].value,
-    };
-    $.ajax({
-      url: "https://localhost:44325/api/movie",
-      dataType: "json",
-      type: "put",
-      contentType: "application/json",
-      data: JSON.stringify(movie),
-      success: function (data, textStatus, errorThrown) {
-        $("#response pre").html(data);
-      },
-      error: function (jqXhr, textStatus, jQxhr) {
-        console.log(errorThrown);
-      },
-    }).then(function () {
-      GetMovieList();
-    });
-    e.preventDefault();
-  }
-  $("#update-Form").submit(processForm);
-
-  function SearchForm(e) {
-    let filteredMovies = [];
-    let searchMovieOptions = document.getElementById('select-option').value;
-    let textInput = document.getElementById('text-input').value;
-    let intInput = document.getElementById('int-input').value;
-    switch (searchMovieOptions){
-      case "title":
-        filteredMovies = movies.filter(m => m.Title.includes(textInput));
-        break;
-        case "director":
-        filteredMovies = movies.filter(m => m.Director.includes(textInput));
-        break;
-        case "genre":
-        filteredMovies = movies.filter(m => m.Genre.includes(textInput));
-        break;
-        case "synopsis":
-        filteredMovies = movies.filter(m => m.Synopsis.includes(textInput));
-        break;
-        case "run time":
-        filteredMovies = movies.filter(m => m.includes(intInput));
-        break;
-        default:
-          break;
-    }
-    $('.movieData').html('');
-    $.each(filteredMovies, function(index, value) {
-      $('.movieData').append(
-        '<tr>' + 
-        '<td>' + value.title + '</td>' +
-        '<td>' + value.genre + '</td>' +
-        '<td>' + value.runTime + '</td>' +
-        '<td>' + value.synopsis + '</td>' +
-        '<td>' + value.director + '</td>' +
-        '<tr>'
-      );
-    });
-    e.preventDefault();
+function UpdateMovie() {
+  var movie = {
+    Title: this["title"].value,
+    Director: this["director"].value,
+    Genre: this["genre"].value,
+    Synopsis: this["synopsis"].value,
+    RunTime: this["run  time"].value,
+    ImageLocation: this["imagelocation"].value,
   };
-  $('#searchForm').submit(SearchForm);
-
-  function GetMovieList(e) {
-    $(document).ready(function (){
-      $.ajax({
-      url: "https://localhost:44325/api/movie",
-      dataType: "json",
-      type: "GET",
-      data: JSON.stringify(e),
-      success: function (data) {
-          movies = data
-          $.each(data, function(index,value){
-            $('.movieData').append(
-              '<tr>' + 
-              '<td>' + value.title + '</td>' +
-              '<td>' + value.genre + '</td>' +
-              '<td>' + value.runTime + '</td>' +
-              '<td>' + value.synopsis + '</td>' +
-              '<td>' + value.director + '</td>' +
-              '<tr>'
-            );
-          });
-
-      }
-    })
+  $.ajax({
+    url: "https://localhost:44325/api/movie",
+    dataType: "json",
+    type: "put",
+    contentType: "application/json",
+    data: JSON.stringify(movie),
+    success: function (data, textStatus, errorThrown) {
+      $("#response pre").html(data);
+    },
+    error: function (jqXhr, textStatus, jQxhr) {
+      console.log(errorThrown);
+    },
+  }).then(function () {
+    GetMovieList();
   });
-}$(document).ready(GetMovieList());
+  e.preventDefault();
+}
+$("#update-Form").submit(processForm);
 
-})(jQuery);
+function SearchForm() {
+  let filteredMovies = [];
+  let searchMovieOptions = document.getElementById("select-option").value;
+  let textInput = document.getElementById("text-input").value;
+  let intInput = document.getElementById("int-input").value;
+  switch (searchMovieOptions) {
+    case "title":
+      filteredMovies = movies.filter((m) => m.Title.includes(textInput));
+      break;
+    case "director":
+      filteredMovies = movies.filter((m) => m.Director.includes(textInput));
+      break;
+    case "genre":
+      filteredMovies = movies.filter((m) => m.Genre.includes(textInput));
+      break;
+    case "synopsis":
+      filteredMovies = movies.filter((m) => m.Synopsis.includes(textInput));
+      break;
+    case "run time":
+      filteredMovies = movies.filter((m) => m.includes(intInput));
+      break;
+    default:
+      break;
+  }
+  $(".movieData").html("");
+  $.each(filteredMovies, function (index, value) {
+    $(".movieData").append(
+      "<tr>" +
+        "<td>" +
+        value.title +
+        "</td>" +
+        "<td>" +
+        value.genre +
+        "</td>" +
+        "<td>" +
+        value.runTime +
+        "</td>" +
+        "<td>" +
+        value.synopsis +
+        "</td>" +
+        "<td>" +
+        value.director +
+        "</td>" +
+        "<tr>"
+    );
+  });
+  e.preventDefault();
+}
+$("#searchForm").submit(SearchForm);
+
+function GetMovieList() {
+  $.ajax({
+    url: "https://localhost:44325/api/movie",
+    dataType: "json",
+    type: "GET",
+    data: JSON.stringify(),
+    success: function (data){
+        MovieSucess(data);
+    },
+  });
+}
+function MovieSucess(data) {
+  movies = data;
+  $(".movieData").html("");
+  data.forEach(value => {
+    $(".movieData").append(
+      "<tr>" +
+        "<td>" +
+        value.title +
+        "</td>" +
+        "<td>" +
+        value.genre +
+        "</td>" +
+        "<td>" +
+        value.runTime +
+        "</td>" +
+        "<td>" +
+        value.synopsis +
+        "</td>" +
+        "<td>" +
+        value.director +
+        "</td>" +
+        "<tr>"
+    );
+  });
+}
+
 
 //$(function(){
 //$.get("https://localhost:44325/api/movie", function(data){
