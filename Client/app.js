@@ -1,38 +1,4 @@
 (function ($) {
-    function UpdateMovie(e){
-      var movie = {
-      Title: this["title"].value,
-      Director: this["director"].value,
-      Genre: this["genre"].value,
-      Synopsis: this["synopsis"].value,
-      RunTime: this["run  time"].value,
-      ImageLocation: this["imagelocation"].value
-      
-    };
-    $.ajax({
-      url:"https://localhost:44325/api/movie",
-      dataType: 'json',
-      type: 'put',
-      contentType: 'application/json',
-      data: JSON.stringify(movie),
-      success: function (data, textStatus, errorThrown) {
-        $("#response pre").html(data);
-      },
-      error: function (jqXhr, textStatus, jQxhr) {
-        console.log(errorThrown);
-      }
-    }).then(function (){
-      GetMovieList();
-    })
-    e.preventDefault();
-  }
-  $("#update-Form").submit(processForm);
-  //$("#update-Form").submit(function (e){
-    //e.preventDefault();
-    //UpdateMovie();
-  //});
-
-
   function processForm(e) {
     var dict = {
       Title: this["title"].value,
@@ -40,7 +6,7 @@
       Genre: this["genre"].value,
       Synopsis: this["synopsis"].value,
       RunTime: this["run  time"].value,
-      ImageLocation: this["imagelocation"].value
+      ImageLocation: this["imagelocation"].value,
     };
 
     $.ajax({
@@ -61,44 +27,61 @@
   }
 
   $("#addForm").submit(processForm);
+
+  function UpdateMovie(e) {
+    var movie = {
+      Title: this["title"].value,
+      Director: this["director"].value,
+      Genre: this["genre"].value,
+      Synopsis: this["synopsis"].value,
+      RunTime: this["run  time"].value,
+      ImageLocation: this["imagelocation"].value,
+    };
+    $.ajax({
+      url: "https://localhost:44325/api/movie",
+      dataType: "json",
+      type: "put",
+      contentType: "application/json",
+      data: JSON.stringify(movie),
+      success: function (data, textStatus, errorThrown) {
+        $("#response pre").html(data);
+      },
+      error: function (jqXhr, textStatus, jQxhr) {
+        console.log(errorThrown);
+      },
+    }).then(function () {
+      GetMovieList();
+    });
+    e.preventDefault();
+  }
+  $("#update-Form").submit(processForm);
+  //$("#update-Form").submit(function (e){
+  //e.preventDefault();
+  //UpdateMovie();
+  //});
+  function GetMovieList(e) {}
+  function SearchForm(e) {}
 })(jQuery);
 
+//$(function(){
+//$.get("https://localhost:44325/api/movie", function(data){
+//console.log(data);
 
+//data.map(function(el){
+//$("#Movies").append('<div> Movie Title: ${el.title} </div>
+//<div> Movie Director: ${el.Director}</div>
+//<br>');
+//})
+//})
+//})
+//$(function(){
+//$.get('https://localhost:44325/api/movie $(#id)', function(data){
+//console.log(data);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-$(function(){
-  $.get("https://localhost:44325/api/movie", function(data){
-    console.log(data);
-
-    data.map(function(el){
-      $("#Movies").append('<div> Movie Title: ${el.title} </div>
-      <div> Movie Director: ${el.Director}</div> 
-      <br>');
-    })
-  })
-})
-$(function(){
-  $.get('https://localhost:44325/api/movie $(#id)', function(data){
-    console.log(data);
-
-    data.map(function(el){
-      $("#Movies").append('<div> Movie Title: ${el.title} </div>
-      <div> Movie Director: ${el.Director}</div> 
-      <br>');
-    })
-  })
-})
+//data.map(function(el){
+//$("#Movies").append('<div> Movie Title: ${el.title} </div>
+//<div> Movie Director: ${el.Director}</div>
+//<br>');
+//})
+//})
+//})
