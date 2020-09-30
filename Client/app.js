@@ -76,7 +76,7 @@
         filteredMovies = movies.filter(m => m.Synopsis.includes(textInput));
         break;
         case "run time":
-        filteredMovies = movies.filter(m => m..includes(intInput));
+        filteredMovies = movies.filter(m => m.includes(intInput));
         break;
         default:
           break;
@@ -103,9 +103,21 @@
       url: "https://localhost:44325/api/movie",
       dataType: "json",
       type: "GET",
-      
-      success: function () {
-        $('.movieData'.html(data));
+      data: JSON.stringify(movie),
+      success: function (data) {
+          movies = data
+          $.each(data, function(index,value){
+            $('.movieData').append(
+              '<tr>' + 
+              '<td>' + value.title + '</td>' +
+              '<td>' + value.genre + '</td>' +
+              '<td>' + value.runTime + '</td>' +
+              '<td>' + value.synopsis + '</td>' +
+              '<td>' + value.director + '</td>' +
+              '<tr>'
+            );
+          });
+
       }
     })
     .then(function (data) {
