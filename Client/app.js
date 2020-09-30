@@ -83,10 +83,22 @@
         default:
           break;
     }
-    $('.movieData'),html('');
-    $.each(filteredMovies)
-
-  }
+    $('.movieData').html('');
+    $.each(filteredMovies, function(index, value) {
+      $('.movieData').append(
+        '<tr>' + 
+        '<td>' + value.title + '</td>' +
+        '<td>' + value.genre + '</td>' +
+        '<td>' + value.runTime + '</td>' +
+        '<td>' + value.synopsis + '</td>' +
+        '<td>' + value.director + '</td>' +
+        '<tr>'
+      );
+    });
+    e.preventDefault();
+  };
+  $('#searchForm').submit(SearchForm);
+  
   function GetMovieList(e) {
     $(document).ready(function (){
       $.ajax({
