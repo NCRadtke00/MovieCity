@@ -78,7 +78,7 @@
         filteredMovies = movies.filter(m => m.Synopsis.includes(textInput));
         break;
         case "run time":
-        filteredMovies = movies.filter(m => m..includes(textInput));
+        filteredMovies = movies.filter(m => m.includes(textInput));
         break;
         default:
           break;
@@ -107,24 +107,22 @@
       type: "GET",
       
       success: function () {
-        $('.movieData'.html(data));
+        then(function (data) {
+          movies = data
+          $.each(data, function(index,value){
+            $('.movieData').append(
+              '<tr>' + 
+              '<td>' + value.title + '</td>' +
+              '<td>' + value.genre + '</td>' +
+              '<td>' + value.runTime + '</td>' +
+              '<td>' + value.synopsis + '</td>' +
+              '<td>' + value.director + '</td>' +
+              '<tr>'
+            );
+          });
+        });
       }
     })
-    .then(function (data) {
-      movies = data
-      $.each(data, function(index,value){
-        $('.movieData').append(
-          '<tr>' + 
-          '<td>' + value.title + '</td>' +
-          '<td>' + value.genre + '</td>' +
-          '<td>' + value.runTime + '</td>' +
-          '<td>' + value.synopsis + '</td>' +
-          '<td>' + value.director + '</td>' +
-          '<tr>'
-        );
-      });
-    });
-   
   });
 }$(document).ready(GetMovieList());
 
