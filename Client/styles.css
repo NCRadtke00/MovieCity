@@ -137,7 +137,6 @@ body {
   display: inline-block;
 }
 input {
-  border: 1px solid transparent;
   background-color: #f1f1f1;
   padding: 10px;
   font-size: 16px;
@@ -154,9 +153,6 @@ input[type="submit"] {
 }
 .autocomplete-items {
   position: absolute;
-  border: 1px solid #6b6b6b;
-  border-bottom: none;
-  border-top: none;
   z-index: 99;
   /*position the autocomplete items to be the same width as the container:*/
   top: 100%;
@@ -237,7 +233,7 @@ input[type="submit"]:hover {
 
 /* Style the container/contact section */
 .containerAdd {
-  border-radius: 5px;
+
   background-color: darkred;
   color: white;
 
