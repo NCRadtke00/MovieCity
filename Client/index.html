@@ -24,7 +24,7 @@
       <a href="#Update">Update Movie</a>
       <a href="#about">About Us</a>
       <div class="search-container">
-        <form autocomplete="on" action="">
+        <form autocomplete="on" action="GetMovieList()">
           <div class="autocomplete" style="width: 300px">
             <input
               id="title"
@@ -154,7 +154,39 @@
       </div>
     </div>
   </section>
-<section id="about">
+<!-- Slider box starter code -->
+  <section class="orange-fade p-5 margin-top-xl pos-r">
+    <button class="btn" onclick="GetMovieList()">Display Movie List</button>
+    <div class="container">
+       <div class="row">
+      <div class="col-sm-12">
+          <h2 class="text-center font-weight-bold text-white">Our Customers are Seeing Big Results</h2>
+          <p></p>
+         <div class="mt-5 pos-r">
+            <div class="carousel-controls testimonial-carousel-controls">
+              <div class="control prev"><i class="fa fa-chevron-left text-white">&nbsp;</i></div>
+              <div class="control next"><i class="fa fa-chevron-right text-white">&nbsp;</i></div>
+            </div>
+            <div class="movieSlider">
+              <div class="one-slide white">
+
+              </div>
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section id="about">
 <div class="about-section">
   <h1>About the team</h1>
   <p>Group Project, for devCodeCamp. Movie library and review system.</p>
@@ -208,7 +240,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="./app.js"></script>
     <script>
-      autocomplete(document.getElementById("myInput"), countries);
+      autocomplete(document.getElementById("myInput"));
     </script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"

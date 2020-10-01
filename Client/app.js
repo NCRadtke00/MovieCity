@@ -243,46 +243,57 @@ function autocomplete(inp, arr) {
     closeAllLists(e.target);
   });
 }
+
 //SLider box logic
-// movies = data;
-// $(".movieData").html("");
-// data.forEach((value) => {
-//   $(".movieData").append(
-//     "<tr>" +
-//       "<td>" +
-//       value.title +
-//       "</td>" +
-//       "<td>" +
-//       value.genre +
-//       "</td>" +
-//       "<td>" +
-//       value.runTime +
-//       "</td>" +
-//       "<td>" +
-//       value.synopsis +
-//       "</td>" +
-//       "<td>" +
-//       value.director +
-//       "</td>" +
-//       "<tr>"
-//   );
-// });
-function sliderBox() {
-  $(".testimonial-carousel").slick({
-    infinite: !0,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: !1,
-    arrows: true,
-    prevArrow: $(".testimonial-carousel-controls .prev"),
-    nextArrow: $(".testimonial-carousel-controls .next"),
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-    ],
+function GetAllMovies() {
+  $.ajax({
+    url: "https://localhost:44325/api/movie",
+    dataType: "json",
+    type: "GET",
+    data: JSON.stringify(),
+    success: function (data) {
+      MovieSucess(data);
+    },
   });
+}
+function sliderMovieBox(data){
+movies = data;
+data.forEach((value) => {
+  $(".movieSlider").append(
+    "<tr>" +
+      "<td>" +
+      value.title +
+      "</td>" +
+      "<td>" +
+      value.genre +
+      "</td>" +
+      "<td>" +
+      value.runTime +
+      "</td>" +
+      "<td>" +
+      value.synopsis +
+      "</td>" +
+      "<td>" +
+      value.director +
+      "</td>" +
+      "<tr>"
+  );
+});
+}
+function sliderBox(){
+  $(".movieSlider").slick({
+	infinite: !0,
+	slidesToShow: 4,
+	slidesToScroll: 1,
+	autoplay: !1,
+	arrows:true,
+	prevArrow: $(".testimonial-carousel-controls .prev"),
+	nextArrow: $(".testimonial-carousel-controls .next"),
+	responsive: [{
+	  breakpoint: 1200,
+	  settings: {
+	    slidesToShow: 3
+      }
+    }]
+  })
 }
