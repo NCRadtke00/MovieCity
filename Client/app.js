@@ -1,13 +1,13 @@
-function AddMovie(title, director, genre, synopsis, runTime, imagelocation) {
-  console.log("test");
-  var dict = {
-    Title: title.value,
-    Director: director.value,
-    Genre: genre.value,
-    Synopsis: synopsis.value,
-    RunTime: runTime.value,
-    ImageLocation: imagelocation.value,
-  };
+function AddMovie() {
+  console.log( document.getElementById("Titlebox").value);
+  // var dict = {
+  //   Title: document.getElementById("Titlebox").value,
+  //   // Director: director.value,
+  //   // Genre: genre.value,
+  //   // Synopsis: synopsis.value,
+  //   // RunTime: runTime.value,
+  //   // ImageLocation: imagelocation.value,
+  // };
 
   $.ajax({
     url: "https://localhost:44325/api/movie",
