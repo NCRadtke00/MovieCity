@@ -1,13 +1,13 @@
 function AddMovie() {
-  console.log( document.getElementById("Titlebox").value);
-  // var dict = {
-  //   Title: document.getElementById("Titlebox").value,
-  //   // Director: director.value,
-  //   // Genre: genre.value,
-  //   // Synopsis: synopsis.value,
-  //   // RunTime: runTime.value,
-  //   // ImageLocation: imagelocation.value,
-  // };
+  console.log( $("#Titlebox").val());
+  var dict = {
+    Title: $("#Titlebox").val(),
+    Director: $("#Director-input").val(),
+    Genre: $("#Genre").val(),
+    Synopsis: $("#Synopsis").val(),
+    RunTime: $("#runTime-input").val(),
+    ImageLocation: $("#ImageLoaction-input").val,
+  };
 
   $.ajax({
     url: "https://localhost:44325/api/movie",
@@ -22,20 +22,18 @@ function AddMovie() {
       console.log(errorThrown);
     },
   });
-
-  e.preventDefault();
 }
 
 $("#addForm").submit(AddMovie);
 
 function UpdateMovie() {
   var movie = {
-    Title: this["title"].value,
-    Director: this["director"].value,
-    Genre: this["genre"].value,
-    Synopsis: this["synopsis"].value,
-    RunTime: this["run  time"].value,
-    ImageLocation: this["imagelocation"].value,
+    Title: $("#Titlebox").val(),
+    Director: $("#Director-input").val(),
+    Genre: $("#Genre").val(),
+    Synopsis: $("#Synopsis").val(),
+    RunTime: $("#runTime-input").val(),
+    ImageLocation: $("#ImageLoaction-input").val,
   };
   $.ajax({
     url: "https://localhost:44325/api/movie",
@@ -52,7 +50,7 @@ function UpdateMovie() {
   }).then(function () {
     GetMovieList();
   });
-  e.preventDefault();
+
 }
 $("#update-Form").submit(AddMovie);
 
