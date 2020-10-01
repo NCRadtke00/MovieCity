@@ -95,13 +95,13 @@
             <option value="War and Military">War and Military</option>
           </select>
           <label for="Synopsis">Synopsis:</label>
-          <textarea id="Synopsis" name="Synopsis" placeholder="Add the movie synopsis.." style="height:170px"></textarea>
+          <input type="text" id="Synopsis" name="Synopsis" placeholder="Add the movie synopsis.." style="height:170px"></textarea>
           <label for="runTime-input">Run Time:</label>
           <input type="number" name="runTime" id="runTime-input" placeholder="90"/>
           <label for="ImageLoaction-input">Image URL: </label>
           <input type="text" name="imageLoaction" id="ImageLoaction-input" placeholder="www.google.com"/>
           <!-- <input type="submit" value="Submit"> -->
-          <input type="submit" onclick="AddMovie(Title-input, Director-input, Genre, Synopsis, runTime-input, ImageLoaction-input)" value="Submit">
+          <input type="submit" onclick="AddMovie()" value="Submit">
           
         </form>
         </div>
