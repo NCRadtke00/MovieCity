@@ -37,7 +37,7 @@ html {
 }
 .column {
   float: left;
-  width: 33.3%;
+  width: 50%;
   margin-bottom: 16px;
   padding: 0 8px;
 }
@@ -242,7 +242,7 @@ input[type="submit"]:hover {
 /* Create two columns that float next to eachother */
 .column2 {
   float: left;
-  width: 33%;
+  width: 33.3%;
   margin-top: 6px;
   padding: 20px;
   display: flex;
