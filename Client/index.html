@@ -54,7 +54,7 @@
       <table id="movieDataTable"></table>
     </div>
   </section>
-  <section class="containerAdd" id="Add">
+  <section class="Add" id="Add">
     <div class="containerAdd">
       <div style="text-align:center">
         <h2>Add A Movie</h2>
@@ -104,82 +104,57 @@
       </div>
     </div>
   </section>
-  <section class="form-Section" id ="Update">
-    <h1>Update a movie in the Movie City Library!</h1>
-    <div class="updateForm">
-    <form>
-      <label for="Title-input">Title:</label>
-      <input type="text" name="title" id="Title-input" placeholder = "Movie Title.."/>
-      <label for="Director-input">Director:</label>
-      <input type="text" name="director" id="Director-input" placeholder = "Movie Director.."/>
-      <label for="Genre">Genre:</label>
-      <Select id="Genre" name="genre" />
-        <option value="Action">Action</option>
-        <option value="Adventure">Adventure</option>
-        <option value="Comedy">Comedy</option>
-        <option value="Documentaries">Documentaries</option>
-        <option value="Drama">Drama</option>
-        <option value="Fantasy">Fantasy</option>
-        <option value="History">History</option>
-        <option value="Horror">Horror</option>
-        <option value="Martial Arts Action">Martial Arts Action</option>
-        <option value="Mystery">Mystery</option>
-        <option value="Romance">Romance</option>
-        <option value="Romantic-Comedy">Romantic-Comedy</option>
-        <option value="Romantic-Drama">Romantic-Drama</option>
-        <option value="Sci-Fi">Sci-Fi</option>
-        <option value="Slasher">Slasher</option>
-        <option value="Thriller">Thriller</option>
-        <option value="Western">Western</option>
-        <option value="War and Military">War and Military</option>
-      </select>
-      <label for="Synopsis">Synopsis:</label>
-      <textarea id="Synopsis" name="Synopsis" placeholder="Add the movie synopsis.." style="height:170px"></textarea>
-      <input type="text" name="synopsis" id="Synopsis-input" />
-      <label for="runTime-input">Run Time:</label>
-      <input type="number" name="runTime" id="runTime-input" />
-      <label for="ImageLoaction-input">Image Location: </label>
-      <input type="text" name="imageLoaction" id="ImageLoaction-input" />
-      <input type="submit" value="Submit">
-      <button class="btn" onclick="processForm()">Submit</button>
-    </form>
+  <section class="Update" id="Update">
+    <div class="containerAdd">
+      <div style="text-align:center">
+        <h2>Update A Movie</h2>
+        <p>Please update the incorrect movie information on Movie City:</p>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img src="imageLocation()" style="width:100%">
+        </div>
+        <div class="column">
+          <form action="/action_page.php">
+                  <label for="Title-input">Title:</label>
+          <input type="text" name="title" id="Title-input" placeholder = "Movie Title.."/>
+          <label for="Director-input">Director:</label>
+          <input type="text" name="director" id="Director-input" placeholder = "Movie Director.."/>
+          <label for="Genre">Genre:</label>
+          <Select id="Genre" name="genre" />
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Documentaries">Documentaries</option>
+            <option value="Drama">Drama</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="History">History</option>
+            <option value="Horror">Horror</option>
+            <option value="Martial Arts Action">Martial Arts Action</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Romance">Romance</option>
+            <option value="Romantic-Comedy">Romantic-Comedy</option>
+            <option value="Romantic-Drama">Romantic-Drama</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+            <option value="Slasher">Slasher</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Western">Western</option>
+            <option value="War and Military">War and Military</option>
+          </select>
+          <label for="Synopsis">Synopsis:</label>
+          <textarea id="Synopsis" name="Synopsis" placeholder="Add the movie synopsis.." style="height:170px"></textarea>
+          <label for="runTime-input">Run Time:</label>
+          <input type="number" name="runTime" id="runTime-input" placeholder="90"/>
+          <label for="ImageLoaction-input">Image URL: </label>
+          <input type="text" name="imageLoaction" id="ImageLoaction-input" placeholder="www.google.com"/>
+          <input type="submit" value="Submit">
+          <button class="btn" onclick="processForm()">Submit</button>
+        </form>
+        </div>
+      </div>
     </div>
   </section>
-<!-- Slider box starter code -->
-  <section class="orange-fade p-5 margin-top-xl pos-r">
-    <div class="container">
-       <div class="row">
-      <div class="col-sm-12">
-          <h2 class="text-center font-weight-bold text-white">Our Customers are Seeing Big Results</h2>
-          <p></p>
-         <div class="mt-5 pos-r">
-            <div class="carousel-controls testimonial-carousel-controls">
-              <div class="control prev"><i class="fa fa-chevron-left text-white">&nbsp;</i></div>
-              <div class="control next"><i class="fa fa-chevron-right text-white">&nbsp;</i></div>
-            </div>
-            <div class="testimonial-carousel">
-              <div class="one-slide white">
-                <div class="testimonial w-100 h-100  p-3 text-center">
-                  <div class="message text-center text-gray">I have been working with Solodev for nearly 4 years and I couldn&#39;t be happier with the results!</div>
-                  <div class="separator">&nbsp;</div>
-                  <div class="brand"><img alt="Florida Dairy Farmers" src="https://raw.githubusercontent.com/solodev/slider-boxes/master/images/img-1.png" class="mx-auto"/></div>
-                </div>
-              </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <section id="about">
+<section id="about">
 <div class="about-section">
   <h1>About the team</h1>
   <p>Group Project, for devCodeCamp. Movie library and review system.</p>
