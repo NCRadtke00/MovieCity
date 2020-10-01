@@ -30,7 +30,11 @@ html {
 }
 .aboutabout {
   background-image: url(https://images.all-free-download.com/images/graphiclarge/gorgeous_background_of_the_stage_02_hd_pictures_169915.jpg);
+<<<<<<< Updated upstream
   height: 10%;
+=======
+  /* height: 25rem; */
+>>>>>>> Stashed changes
   background-position: center;
   background-size: cover;
   text-align: center;
@@ -249,10 +253,11 @@ input[type="submit"]:hover {
 }
 
 /* Clear floats after the columns */
-.row:after {
+.row {
   content: "";
   display: table;
   clear: both;
+  max-height: 15%;
 }
 .pic {
   max-width: 700px;
