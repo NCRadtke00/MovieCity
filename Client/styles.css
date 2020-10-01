@@ -250,6 +250,8 @@ input[type="submit"]:hover {
   width: 50%;
   margin-top: 6px;
   padding: 20px;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 /* Clear floats after the columns */
@@ -269,7 +271,7 @@ input[type="submit"]:hover {
 }
 
 .movieData {
-  background-color: rgb(196, 196, 196);
+  background-color: lightsteelblue;
   font-size: medium;
   font-display: auto;
   border: #000;
@@ -288,4 +290,7 @@ input[type="submit"]:hover {
   border-radius: 10px;
   width: 50%;
   height: 10%;
+}
+.text-center {
+  background-color: darkred;
 }
