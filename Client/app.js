@@ -252,14 +252,14 @@ function GetAllMovies() {
     type: "GET",
     data: JSON.stringify(),
     success: function (data) {
-      MovieSucess(data);
+      sliderMovieBox;
     },
   });
 }
 function sliderMovieBox(data){
 movies = data;
 data.forEach((value) => {
-  $(".movieSlider").append(
+  $(".one-slide").append(
     "<tr>" +
       "<td>" +
       value.title +
@@ -280,8 +280,8 @@ data.forEach((value) => {
   );
 });
 }
-function sliderBox(){
-  $(".movieSlider").slick({
+$(document).ready(function() {
+  $(".responsive").slick({
 	infinite: !0,
 	slidesToShow: 4,
 	slidesToScroll: 1,
@@ -293,7 +293,17 @@ function sliderBox(){
 	  breakpoint: 1200,
 	  settings: {
 	    slidesToShow: 3
-      }
-    }]
-  })
-}
+	  }
+	}, {
+	  breakpoint: 992,
+	  settings: {
+	    slidesToShow: 2
+	  }
+	}, {
+	  breakpoint: 600,
+	  settings: {
+	    slidesToShow: 1
+	  }
+	}]
+  });
+});
