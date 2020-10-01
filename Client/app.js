@@ -1,11 +1,12 @@
-function AddMovie() {
+function AddMovie(title, director, genre, synopsis, runTime, imagelocation) {
+  console.log("test");
   var dict = {
-    Title: this["title"].value,
-    Director: this["director"].value,
-    Genre: this["genre"].value,
-    Synopsis: this["synopsis"].value,
-    RunTime: this["run  time"].value,
-    ImageLocation: this["imagelocation"].value,
+    Title: title.value,
+    Director: director.value,
+    Genre: genre.value,
+    Synopsis: synopsis.value,
+    RunTime: runTime.value,
+    ImageLocation: imagelocation.value,
   };
 
   $.ajax({
@@ -121,23 +122,23 @@ function MovieSucess(data) {
   $(".movieData").html("");
   data.forEach((value) => {
     $(".movieData").append(
-      "<ul>" + 
-      "<li>" + 
-      value.title + 
-      "</li>" + 
-      "<li>" + 
-      value.director +
-       "</li>" + 
-       "<li>" + 
-       value.genre + 
-       "</li>" + 
-       "<li>" + 
-       value.synopsis + 
-       "</li>" + 
-       "<li>" + 
-       value.runTime + 
-       "</li>" + 
-       "</ul>"
+      "<ul>" +
+        "<li>" +
+        value.title +
+        "</li>" +
+        "<li>" +
+        value.director +
+        "</li>" +
+        "<li>" +
+        value.genre +
+        "</li>" +
+        "<li>" +
+        value.synopsis +
+        "</li>" +
+        "<li>" +
+        value.runTime +
+        "</li>" +
+        "</ul>"
     );
   });
 }
