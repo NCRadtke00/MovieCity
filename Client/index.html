@@ -48,45 +48,98 @@
       <p>Resize the browser window to see the responsive effect.</p>
     </div>
     </section>
-    <section id="Movielist">
+  <section id="Movielist">
     <button class="btn" onclick="GetMovieList()">Display Movie List</button>
     <div class="movieData">
       <table id="movieDataTable"></table>
     </div>
   </section>
-  <section class="form-Section" id="Add">
-    <h1>Add a movie to the Movie City Library!</h1>
-    <form>
-      <label for="Title-input">Title:</label>
-      <input type="text" name="title" id="Title-input" />
-      <label for="Director-input">Director:</label>
-      <input type="text" name="director" id="Director-input" />
-      <label for="Genre-input">Genre:</label>
-      <input type="text" name="genre" id="Genre-input" />
-      <label for="Synopsis-input">Synopsis:</label>
-      <input type="text" name="synopsis" id="Synopsis-input" />
-      <label for="runTime-input">Run Time:</label>
-      <input type="number" name="runTime" id="runTime-input" />
-      <label for="ImageLoaction-input">Image Location: </label>
-      <input type="text" name="imageLoaction" id="ImageLoaction-input" />
-      <button class="btn" onclick="processForm()">Submit</button>
-    </form>
+  <section class="containerAdd" id="Add">
+    <div class="containerAdd">
+      <div style="text-align:center">
+        <h2>Add A Movie</h2>
+        <p>Please add the missing movie to Movie City:</p>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img src="imageLocation()" style="width:100%">
+        </div>
+        <div class="column">
+          <form action="/action_page.php">
+                  <label for="Title-input">Title:</label>
+          <input type="text" name="title" id="Title-input" placeholder = "Movie Title.."/>
+          <label for="Director-input">Director:</label>
+          <input type="text" name="director" id="Director-input" placeholder = "Movie Director.."/>
+          <label for="Genre">Genre:</label>
+          <Select id="Genre" name="genre" />
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Documentaries">Documentaries</option>
+            <option value="Drama">Drama</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="History">History</option>
+            <option value="Horror">Horror</option>
+            <option value="Martial Arts Action">Martial Arts Action</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Romance">Romance</option>
+            <option value="Romantic-Comedy">Romantic-Comedy</option>
+            <option value="Romantic-Drama">Romantic-Drama</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+            <option value="Slasher">Slasher</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Western">Western</option>
+            <option value="War and Military">War and Military</option>
+          </select>
+          <label for="Synopsis">Synopsis:</label>
+          <textarea id="Synopsis" name="Synopsis" placeholder="Add the movie synopsis.." style="height:170px"></textarea>
+          <label for="runTime-input">Run Time:</label>
+          <input type="number" name="runTime" id="runTime-input" placeholder="90"/>
+          <label for="ImageLoaction-input">Image URL: </label>
+          <input type="text" name="imageLoaction" id="ImageLoaction-input" placeholder="www.google.com"/>
+          <input type="submit" value="Submit">
+          <button class="btn" onclick="processForm()">Submit</button>
+        </form>
+        </div>
+      </div>
+    </div>
   </section>
   <section class="form-Section" id ="Update">
     <h1>Update a movie in the Movie City Library!</h1>
     <form>
       <label for="Title-input">Title:</label>
-      <input type="text" name="title" id="Title-input" />
+      <input type="text" name="title" id="Title-input" placeholder = "Movie Title.."/>
       <label for="Director-input">Director:</label>
-      <input type="text" name="director" id="Director-input" />
-      <label for="Genre-input">Genre:</label>
-      <input type="text" name="genre" id="Genre-input" />
-      <label for="Synopsis-input">Synopsis:</label>
+      <input type="text" name="director" id="Director-input" placeholder = "Movie Director.."/>
+      <label for="Genre">Genre:</label>
+      <Select id="Genre" name="genre" />
+        <option value="Action">Action</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Documentaries">Documentaries</option>
+        <option value="Drama">Drama</option>
+        <option value="Fantasy">Fantasy</option>
+        <option value="History">History</option>
+        <option value="Horror">Horror</option>
+        <option value="Martial Arts Action">Martial Arts Action</option>
+        <option value="Mystery">Mystery</option>
+        <option value="Romance">Romance</option>
+        <option value="Romantic-Comedy">Romantic-Comedy</option>
+        <option value="Romantic-Drama">Romantic-Drama</option>
+        <option value="Sci-Fi">Sci-Fi</option>
+        <option value="Slasher">Slasher</option>
+        <option value="Thriller">Thriller</option>
+        <option value="Western">Western</option>
+        <option value="War and Military">War and Military</option>
+      </select>
+      <label for="Synopsis">Synopsis:</label>
+      <textarea id="Synopsis" name="Synopsis" placeholder="Add the movie synopsis.." style="height:170px"></textarea>
       <input type="text" name="synopsis" id="Synopsis-input" />
       <label for="runTime-input">Run Time:</label>
       <input type="number" name="runTime" id="runTime-input" />
       <label for="ImageLoaction-input">Image Location: </label>
       <input type="text" name="imageLoaction" id="ImageLoaction-input" />
+      <input type="submit" value="Submit">
       <button class="btn" onclick="processForm()">Submit</button>
     </form>
   </section>

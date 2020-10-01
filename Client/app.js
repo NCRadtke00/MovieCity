@@ -267,20 +267,22 @@ function autocomplete(inp, arr) {
 //       "<tr>"
 //   );
 // });
-function sliderBox(){
+function sliderBox() {
   $(".testimonial-carousel").slick({
-	infinite: !0,
-	slidesToShow: 4,
-	slidesToScroll: 1,
-	autoplay: !1,
-	arrows:true,
-	prevArrow: $(".testimonial-carousel-controls .prev"),
-	nextArrow: $(".testimonial-carousel-controls .next"),
-	responsive: [{
-	  breakpoint: 1200,
-	  settings: {
-	    slidesToShow: 3
-      }
-    }]
-  })
+    infinite: !0,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: !1,
+    arrows: true,
+    prevArrow: $(".testimonial-carousel-controls .prev"),
+    nextArrow: $(".testimonial-carousel-controls .next"),
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+    ],
+  });
 }
