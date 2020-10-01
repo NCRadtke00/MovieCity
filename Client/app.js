@@ -28,12 +28,12 @@ $("#addForm").submit(AddMovie);
 
 function UpdateMovie() {
   var movie = {
-    Title: this["title"].value,
-    Director: this["director"].value,
-    Genre: this["genre"].value,
-    Synopsis: this["synopsis"].value,
-    RunTime: this["run  time"].value,
-    ImageLocation: this["imagelocation"].value,
+    Title: $("#Titlebox").val(),
+    Director: $("#Director-input").val(),
+    Genre: $("#Genre").val(),
+    Synopsis: $("#Synopsis").val(),
+    RunTime: $("#runTime-input").val(),
+    ImageLocation: $("#ImageLoaction-input").val,
   };
   $.ajax({
     url: "https://localhost:44325/api/movie",
@@ -50,7 +50,7 @@ function UpdateMovie() {
   }).then(function () {
     GetMovieList();
   });
-  e.preventDefault();
+
 }
 $("#update-Form").submit(AddMovie);
 

@@ -51,7 +51,7 @@
   <!-- movie list -->
 <section id="Movielist">
   <div class="text-center">
-  <button type="button" class="btn btn-primary btn-lg btn1" onclick="GetMovieList()">Display Movies!</button>
+  <button type="button" class="btn btn-primary btn-lg btn1" onclick="GetMovieList()">Display All Movies!</button>
   </div>
   <div class="movieData">
 
@@ -119,7 +119,7 @@
           <img src="cinema-4609877_1920.jpg" style="width:100%">
         </div>
         <div class="column">
-          <form action="/action_page.php">
+          <form>
                   <label for="Title-input">Title:</label>
           <input type="text" name="title" id="Title-input" placeholder = "Movie Title.."/>
           <label for="Director-input">Director:</label>
@@ -146,7 +146,7 @@
             <option value="War and Military">War and Military</option>
           </select>
           <label for="Synopsis">Synopsis:</label>
-          <textarea id="Synopsis" name="Synopsis" placeholder="Add the movie synopsis.." style="height:170px"></textarea>
+          <input type="text" id="Synopsis" name="Synopsis" placeholder="Add the movie synopsis.." style="height:170px"></textarea>
           <label for="runTime-input">Run Time:</label>
           <input type="number" name="runTime" id="runTime-input" placeholder="90"/>
           <label for="ImageLoaction-input">Image URL: </label>
