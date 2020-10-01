@@ -37,26 +37,23 @@
         </form>
       </div>
     </div>
-    <section class="home-section" id="home">
-    <div>
-      <h1>Welcome to Movie city!</h1>
-      <p2>The Most up to-date Movie Library of its kind!</p2>
-      <p2>
+    <section id="home">
+    <div style="padding-left: 16px">
+      <h2>Movie city!</h2>
+      <p>The Most up to-date Movie Library of its kind!</p>
+      <p>
         Try our new Navigation bar with a autocomplete search box and a submit
         button inside of it.
-      </p2>
-      <p2>Resize the browser window to see the responsive effect.</p2>
+      </p>
+      <p>Resize the browser window to see the responsive effect.</p>
     </div>
     </section>
-  <!-- movie list -->
-<section id="Movielist">
-  <div class="text-center">
-  <button type="button" class="btn btn-primary btn-lg btn1" onclick="GetMovieList()">Display Movies!</button>
-  </div>
-  <div class="movieData">
-
-  </div>
-</section>
+  <section id="Movielist">
+    <button class="btn" onclick="GetMovieList()">Display Movie List</button>
+    <div class="movieData">
+      <table id="movieDataTable"></table>
+    </div>
+  </section>
   <section class="Add" id="Add">
     <div class="containerAdd">
       <div style="text-align:center">
@@ -65,10 +62,10 @@
       </div>
       <div class="row">
         <div class="column">
-          <img src="C:\Users\Rad Dad\Desktop\DevCodeCamp\Week8\MovieLibraryCore-master\cinema-4609877_1920.jpg" style="width:100%">
+          <img src="C:\Users\Rad Dad\Desktop\DevCodeCamp\Week8\MovieLibraryCore-master\cinema-4609877_1920.jpg" style="width:auto">
         </div>
         <div class="column">
-          <form >
+          <form action="/action_page.php">
                   <label for="Title-input">Title:</label>
           <input type="text" name="title" id="Title-input" placeholder = "Movie Title.."/>
           <label for="Director-input">Director:</label>
@@ -100,9 +97,8 @@
           <input type="number" name="runTime" id="runTime-input" placeholder="90"/>
           <label for="ImageLoaction-input">Image URL: </label>
           <input type="text" name="imageLoaction" id="ImageLoaction-input" placeholder="www.google.com"/>
-          <!-- <input type="submit" value="Submit"> -->
-          <input type="submit" onclick="AddMovie()" value="Submit">
-          
+          <input type="submit" value="Submit">
+          <button class="btn" onclick="processForm()">Submit</button>
         </form>
         </div>
       </div>
@@ -151,25 +147,57 @@
           <input type="number" name="runTime" id="runTime-input" placeholder="90"/>
           <label for="ImageLoaction-input">Image URL: </label>
           <input type="text" name="imageLoaction" id="ImageLoaction-input" placeholder="www.google.com"/>
-          <input type="submit" onclick="AddMovie()" value="Submit">
+          <input type="submit" value="Submit">
+          <button class="btn" onclick="processForm()">Submit</button>
         </form>
         </div>
       </div>
     </div>
   </section>
+<!-- Slider box starter code -->
+  <section class="orange-fade p-5 margin-top-xl pos-r">
+    <button class="btn" onclick="GetMovieList()">Display Movie List</button>
+    <div class="container">
+       <div class="row">
+      <div class="col-sm-12">
+          <h2 class="text-center font-weight-bold text-white">Our Customers are Seeing Big Results</h2>
+          <p></p>
+         <div class="mt-5 pos-r">
+            <div class="carousel-controls testimonial-carousel-controls">
+              <div class="control prev"><i class="fa fa-chevron-left text-white">&nbsp;</i></div>
+              <div class="control next"><i class="fa fa-chevron-right text-white">&nbsp;</i></div>
+            </div>
+            <div class="movieSlider">
+              <div class="one-slide white">
+
+              </div>
+              </div>
 
 
-  <section class="aboutabout" id="about">
+
+
+
+
+
+
+
+
+
+
+
+
+  <section id="about">
 <div class="about-section">
   <h1>About the team</h1>
   <p>Group Project, for devCodeCamp. Movie library and review system.</p>
   <p>What went into this project: ASP.NET Web API, JavaScript, jQuery, AJAX, HTML, CSS, Postman</p>
 </div>
 
+<h2 style="text-align:center">Our Team</h2>
 <div class="row">
   <div class="column">
     <div class="card">
-      <img src="MovieLibraryCore-master\DSC_05271.png" alt="Nick" style="width:100%;" >
+      <img src="/w3images/team1.jpg" alt="Nick" style="width:100%">
       <div class="container">
         <h2>Nicholas Radtke</h2>
         <p class="title">Student</p>
@@ -182,9 +210,9 @@
 
   <div class="column">
     <div class="card">
-      <img src="KieranHerrPhoto.JPG" alt="Kieran" style="width:100%">
+      <img src="/w3images/team2.jpg" alt="Kieran" style="width:100%">
       <div class="container">
-        <h2>Kieran Herr</h2>
+        <h2>Kieran</h2>
         <p class="title">Student</p>
         <p>dcc student</p>
         <p>KieranHerr@gmail.com</p>
@@ -195,19 +223,19 @@
   
   <div class="column">
     <div class="card">
-      <img src="C:\Users\Rad Dad\Desktop\DevCodeCamp\Week8\MovieLibraryCore-master\DSC_0567.png" alt="Kevin" style="width:100%">
+      <img src="/w3images/team3.jpg" alt="Kevin" style="width:100%">
       <div class="container">
-        <h2>Kevin Harvey Jr.</h2>
+        <h2>Kevin</h2>
         <p class="title">Student</p>
         <p>dcc student</p>
-        <p>LordTy@gmail.com</p>
+        <p>john@example.com</p>
         <p><button class="button">Contact</button></p>
       </div>
     </div>
   </div>
 </div>
 </section>
-<section class="end"></section>
+
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="./app.js"></script>

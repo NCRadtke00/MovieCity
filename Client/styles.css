@@ -17,24 +17,7 @@ html {
 * {
   box-sizing: border-box;
 }
-.home-section {
-  background-image: url(https://images.all-free-download.com/images/graphiclarge/gorgeous_background_of_the_stage_02_hd_pictures_169915.jpg);
-  height: 80rem;
-  background-position: center;
-  background-size: cover;
-  text-align: center;
-  color: white;
-  padding-top: 15rem;
-  text-shadow: 1px 1px 1px black;
-  font-size: x-large;
-}
-.aboutabout {
-  background-image: url(https://images.all-free-download.com/images/graphiclarge/gorgeous_background_of_the_stage_02_hd_pictures_169915.jpg);
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  text-align: center;
-}
+
 .column {
   float: left;
   width: 33.3%;
@@ -50,7 +33,7 @@ html {
 .about-section {
   padding: 50px;
   text-align: center;
-  background-color: darkred;
+  background-color: #474e5d;
   color: white;
 }
 
@@ -66,7 +49,7 @@ html {
 }
 
 .title {
-  color: black;
+  color: grey;
 }
 
 .button {
@@ -98,15 +81,15 @@ body {
 
 .topnav {
   overflow: hidden;
-  background-color: darkred;
+  background-color: #e9e9e9;
 }
 
 .topnav a {
   float: left;
   display: block;
-  color: white;
+  color: black;
   text-align: center;
-  padding: 10px 12px;
+  padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
 }
@@ -117,7 +100,7 @@ body {
 }
 
 .topnav a.active {
-  background-color: dodgerblue;
+  background-color: #2196f3;
   color: white;
 }
 
@@ -137,6 +120,7 @@ body {
   display: inline-block;
 }
 input {
+  border: 1px solid transparent;
   background-color: #f1f1f1;
   padding: 10px;
   font-size: 16px;
@@ -145,6 +129,7 @@ input {
 input[type="text"] {
   background-color: #f1f1f1;
   width: auto;
+
 }
 input[type="submit"] {
   background-color: DodgerBlue;
@@ -153,6 +138,9 @@ input[type="submit"] {
 }
 .autocomplete-items {
   position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
   z-index: 99;
   /*position the autocomplete items to be the same width as the container:*/
   top: 100%;
@@ -220,7 +208,7 @@ textarea {
 }
 
 input[type="submit"] {
-  background-color: dodgerblue;
+  background-color: #4caf50;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -228,15 +216,13 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: dodgerblue;
+  background-color: #45a049;
 }
 
 /* Style the container/contact section */
 .containerAdd {
-
-  background-color: darkred;
-  color: white;
-
+  border-radius: 5px;
+  background-color: #f2f2f2;
   padding: 10px;
 }
 
@@ -246,8 +232,6 @@ input[type="submit"]:hover {
   width: 50%;
   margin-top: 6px;
   padding: 20px;
-  display: flex;
-  flex-wrap: nowrap;
 }
 
 /* Clear floats after the columns */
@@ -261,32 +245,14 @@ input[type="submit"]:hover {
 @media screen and (max-width: 600px) {
   .column,
   input[type="submit"] {
-    width: 100%;
+    width: auto;
     margin-top: 0;
+
   }
 }
-
-.movieData {
-  background-color: lightsteelblue;
-  font-size: medium;
-  font-display: auto;
-  border: #000;
-  border-width: 2px;
-  border-radius: 5px;
-}
-.movieDataTable {
-  padding: 2px;
-  border: #000;
-  border-radius: 5px;
-  border-width: 2px;
-}
-.btn-lg {
-  padding: 10px 20px;
-  font-size: larger;
-  border-radius: 10px;
-  width: 50%;
-  height: 10%;
-}
-.text-center {
-  background-color: darkred;
+.updateForm {
+  padding-top: 2px;
+  padding-right: 2px;
+  padding-bottom: 2px;
+  padding-left: 2px;
 }
