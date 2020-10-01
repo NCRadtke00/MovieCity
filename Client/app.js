@@ -121,23 +121,23 @@ function MovieSucess(data) {
   $(".movieData").html("");
   data.forEach((value) => {
     $(".movieData").append(
-      "<tr>" +
-        "<td>" +
-        value.title +
-        "</td>" +
-        "<td>" +
-        value.genre +
-        "</td>" +
-        "<td>" +
-        value.runTime +
-        "</td>" +
-        "<td>" +
-        value.synopsis +
-        "</td>" +
-        "<td>" +
-        value.director +
-        "</td>" +
-        "<tr>"
+      "<ul>" + 
+      "<li>" + 
+      value.title + 
+      "</li>" + 
+      "<li>" + 
+      value.director +
+       "</li>" + 
+       "<li>" + 
+       value.genre + 
+       "</li>" + 
+       "<li>" + 
+       value.synopsis + 
+       "</li>" + 
+       "<li>" + 
+       value.runTime + 
+       "</li>" + 
+       "</ul>"
     );
   });
 }
@@ -243,67 +243,3 @@ function autocomplete(inp, arr) {
     closeAllLists(e.target);
   });
 }
-
-//SLider box logic
-function GetAllMovies() {
-  $.ajax({
-    url: "https://localhost:44325/api/movie",
-    dataType: "json",
-    type: "GET",
-    data: JSON.stringify(),
-    success: function (data) {
-      sliderMovieBox;
-    },
-  });
-}
-function sliderMovieBox(data){
-movies = data;
-data.forEach((value) => {
-  $(".one-slide").append(
-    "<tr>" +
-      "<td>" +
-      value.title +
-      "</td>" +
-      "<td>" +
-      value.genre +
-      "</td>" +
-      "<td>" +
-      value.runTime +
-      "</td>" +
-      "<td>" +
-      value.synopsis +
-      "</td>" +
-      "<td>" +
-      value.director +
-      "</td>" +
-      "<tr>"
-  );
-});
-}
-$(document).ready(function() {
-  $(".responsive").slick({
-	infinite: !0,
-	slidesToShow: 4,
-	slidesToScroll: 1,
-	autoplay: !1,
-	arrows:true,
-	prevArrow: $(".testimonial-carousel-controls .prev"),
-	nextArrow: $(".testimonial-carousel-controls .next"),
-	responsive: [{
-	  breakpoint: 1200,
-	  settings: {
-	    slidesToShow: 3
-	  }
-	}, {
-	  breakpoint: 992,
-	  settings: {
-	    slidesToShow: 2
-	  }
-	}, {
-	  breakpoint: 600,
-	  settings: {
-	    slidesToShow: 1
-	  }
-	}]
-  });
-});
