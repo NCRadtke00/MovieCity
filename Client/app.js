@@ -1,4 +1,4 @@
-function processForm() {
+function AddMovie() {
   var dict = {
     Title: this["title"].value,
     Director: this["director"].value,
@@ -25,7 +25,7 @@ function processForm() {
   e.preventDefault();
 }
 
-$("#addForm").submit(processForm);
+$("#addForm").submit(AddMovie);
 
 function UpdateMovie() {
   var movie = {
@@ -53,7 +53,7 @@ function UpdateMovie() {
   });
   e.preventDefault();
 }
-$("#update-Form").submit(processForm);
+$("#update-Form").submit(AddMovie);
 
 function SearchForm() {
   let filteredMovies = [];

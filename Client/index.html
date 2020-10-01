@@ -60,7 +60,7 @@
           <img src="C:\Users\Rad Dad\Desktop\DevCodeCamp\Week8\MovieLibraryCore-master\cinema-4609877_1920.jpg" style="width:100%">
         </div>
         <div class="column">
-          <form action="/action_page.php">
+          <form >
                   <label for="Title-input">Title:</label>
           <input type="text" name="title" id="Title-input" placeholder = "Movie Title.."/>
           <label for="Director-input">Director:</label>
@@ -92,7 +92,8 @@
           <input type="number" name="runTime" id="runTime-input" placeholder="90"/>
           <label for="ImageLoaction-input">Image URL: </label>
           <input type="text" name="imageLoaction" id="ImageLoaction-input" placeholder="www.google.com"/>
-          <button class="btn" onclick="processForm()">Submit</button>
+          <!-- <input type="submit" value="Submit"> -->
+          <button class="btn" onclick="AddMovie()">Submit</button>
         </form>
         </div>
       </div>
@@ -141,7 +142,8 @@
           <input type="number" name="runTime" id="runTime-input" placeholder="90"/>
           <label for="ImageLoaction-input">Image URL: </label>
           <input type="text" name="imageLoaction" id="ImageLoaction-input" placeholder="www.google.com"/>
-          <button class="btn" onclick="processForm()">Submit</button>
+          <input type="submit" value="Submit">
+          <button class="btn" onclick="UpdateMovie()">Submit</button>
         </form>
         </div>
       </div>
