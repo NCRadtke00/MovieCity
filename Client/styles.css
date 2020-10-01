@@ -28,7 +28,7 @@ html {
   text-shadow: 1px 1px 1px black;
   font-size: x-large;
 }
-.aboutabout {
+.end {
   background-image: url(https://images.all-free-download.com/images/graphiclarge/gorgeous_background_of_the_stage_02_hd_pictures_169915.jpg);
   height: 80rem;
   background-position: center;
@@ -265,40 +265,25 @@ input[type="submit"]:hover {
     margin-top: 0;
   }
 }
-.updateForm {
-  padding-top: 2px;
-  padding-right: 2px;
-  padding-bottom: 2px;
-  padding-left: 2px;
+
+.movieData {
+  background-color: rgb(196, 196, 196);
+  font-size: medium;
+  font-display: auto;
+  border: #000;
+  border-width: 2px;
+  border-radius: 5px;
 }
-.one-slide {
-  border-radius: 3px;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  font-size: 1.1rem;
-  height: 300px;
+.movieDataTable {
+  padding: 2px;
+  border: #000;
+  border-radius: 5px;
+  border-width: 2px;
 }
-/* Scss Document */
-.orange-fade {
-  background: #ff910e;
-  background: linear-gradient(135deg, #ff910e 0, #ffa841 100%);
-}
-.pos-r {
-  position: relative !important;
-}
-.carousel-controls .control {
-  position: absolute;
-  cursor: pointer;
-  top: 56.4%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-.prev {
-  left: -1.875rem;
-}
-.next {
-  right: -1.875rem;
+.btn-lg {
+  padding: 10px 20px;
+  font-size: larger;
+  border-radius: 10px;
+  width: 50%;
+  height: 10%;
 }
