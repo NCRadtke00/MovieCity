@@ -45,9 +45,15 @@ namespace WebAPISample.Controllers
         [HttpPut]
         public IActionResult Put([FromBody] Movie movie)
         {
-            _context.Movies.Update(movie);
+            var movieToUpdate = _context.Movies.Single(a => a.MovieId == movie.MovieId);
+            movieToUpdate.Title = movie.Title;
+            movieToUpdate.Director = movie.Director;
+            movieToUpdate.Genre = movie.Genre;
+            movieToUpdate.Synopsis= movie.Synopsis;
+            movieToUpdate.RunTime = movie.RunTime;
+            movieToUpdate.ImageLocation = movie.ImageLocation;
             _context.SaveChanges();
-            return Ok(movie);
+            return Ok(movieToUpdate);
         }
         // DELETE api/movie/5
         [HttpDelete("{id}")]

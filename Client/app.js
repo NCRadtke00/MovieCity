@@ -1,5 +1,5 @@
 function AddMovie() {
-  console.log( $("#Titlebox").val());
+  console.log($("#Titlebox").val());
   var dict = {
     Title: $("#Titlebox").val(),
     Director: $("#Director-input").val(),
@@ -26,14 +26,25 @@ function AddMovie() {
 
 $("#addForm").submit(AddMovie);
 
-function UpdateMovie() {
+function UpdateMovie(
+  in,
+  title,
+  director,
+  genre,
+  synopsis,
+  runTime,
+  ImageLocation
+) {
+  console.log("UpdateMovie");
+  id = parseInt(id);
   var movie = {
+    ////MovieId: $("#MovieId").val(),  should I have this here. I dont think this can be changed?
     Title: $("#Titlebox").val(),
     Director: $("#Director-input").val(),
     Genre: $("#Genre").val(),
     Synopsis: $("#Synopsis").val(),
     RunTime: $("#runTime-input").val(),
-    ImageLocation: $("#ImageLoaction-input").val,
+    ImageLocation: $("#ImageLoaction-input").val(),
   };
   $.ajax({
     url: "https://localhost:44325/api/movie",
@@ -50,7 +61,6 @@ function UpdateMovie() {
   }).then(function () {
     GetMovieList();
   });
-
 }
 $("#update-Form").submit(AddMovie);
 
